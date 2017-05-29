@@ -1,6 +1,15 @@
 package Testing;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+
+import java.util.Date;
+
 import java.util.Scanner;
+
+
 
 public class ProcesadorDeJuego {
 	public static void main(String[] args) {
@@ -10,7 +19,105 @@ public class ProcesadorDeJuego {
 		boolean respuesta=true, difi=true;
 
 		Scanner escaner = new Scanner(System.in);
+		
+; 
+		Date Ahora = new Date(); 
+		
 
+		
+		BufferedWriter bwritter = null;
+		FileWriter fwritter = null;
+
+		try{
+			fwritter = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+			bwritter = new BufferedWriter (fwritter);
+			bwritter.write("El programa de Poker se inicio en la siguiete fecha:   " + Ahora);
+			bwritter.newLine();
+			bwritter.write("Y los ganadores de los distintos torneos hasta que se cerro la aplicacion han sido....\n");
+			bwritter.newLine();
+
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		try{
+			if (bwritter != null)
+				bwritter.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		
+		}
+		
+///////////////////////////////////////////////////
+		
+		
+		
+		do{
+			do{
+				System.out.println("QUE DESEA HACER? (seleccione numero 1 o 2)");
+				System.out.println("1. JUGAR TORNEO DE POKER");
+				System.out.println("2. VER HISTORIAL DE GANADORES");
+				opcion_eleguida=escaner.nextLine();
+				if(opcion_eleguida.length()<=1){
+					try{
+
+						opcion=Integer.valueOf(opcion_eleguida);
+					} catch (Exception a){
+						System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+						System.out.println("LA OPCION INGRESADA NO CORRESPONDE. ELEGUIR 1 o 2. \n");
+						opcion_eleguida="aaaaaaaaaaaaaaaaaaa";
+					}
+				}
+				else {
+					System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+					System.out.println("LA OPCION INGRESADA NO CORRESPONDE. ELEGUIR 1 o 2. \n");
+					opcion_eleguida="aaaaaaaaaaaaa";
+				}
+
+
+			} while(opcion_eleguida.length()>=2);
+
+			if (opcion<1 || opcion>2){
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+				System.out.println("LA OPCION INGRESADA NO CORRESPONDE. ELEGUIR 1 o 2. \n");
+				opcion=0;
+			}
+			
+			
+			
+			if (opcion == 2){
+				BufferedReader br = null;
+				FileReader fr = null;
+				String linea = null;
+				try{
+					fr = new FileReader("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt");
+					br = new BufferedReader (fr);
+					while((linea = br.readLine() ) != null){
+						System.out.println(linea);
+					}
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+				try{
+					if (br != null)
+						br.close();
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+			
+				opcion=5;
+				
+			}
+			
+			else if (opcion==1){
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+				System.out.println("GRACIAS POR QUERER JUGAR\n");
+				opcion=1;
+			}
+		}while (opcion!=1 && opcion!=2);
+					
+		
+		//////////////////////////////////////////////////////////
 		
 		do{
 			
@@ -84,9 +191,34 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
+					
+						
 						
 					}
 					if(dificultad==2){
@@ -102,9 +234,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 					if(dificultad==1){
@@ -120,9 +275,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 				}while(difi==true);
@@ -167,9 +345,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 					
 					}
 					if(dificultad==2){
@@ -185,9 +386,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 					if(dificultad==1){
@@ -203,9 +427,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 				}while(difi==true);
@@ -251,9 +498,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 					
 					}
 					if(dificultad==2){
@@ -269,9 +539,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 					if(dificultad==1){
@@ -287,9 +580,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 				}while(difi==true);
@@ -335,9 +651,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 					
 					}
 					if(dificultad==2){
@@ -353,9 +692,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 					
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 					if(dificultad==1){
@@ -371,9 +733,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 				}while(difi==true);
@@ -419,9 +804,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 					if(dificultad==2){
@@ -437,9 +845,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 					if(dificultad==1){
@@ -455,9 +886,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 				}while(difi==true);
@@ -503,9 +957,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 					if(dificultad==2){
@@ -521,9 +998,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 					
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 					if(dificultad==1){
@@ -539,9 +1039,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 				}while(difi==true);
@@ -587,9 +1110,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 					if(dificultad==2){
@@ -605,9 +1151,32 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 					
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
+						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 						
 					}
 					if(dificultad==1){
@@ -623,23 +1192,54 @@ public class ProcesadorDeJuego {
 							juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						}
 						
+						BufferedWriter bw = null;
+						FileWriter fw = null;
 						System.out.println();
-						for (JugadorHumano p : juego.jugadores)
+						for (JugadorHumano p : juego.jugadores){
 							System.out.println(p + " [fondo: " + p.getPlata() + "]");
 						
+				
+						try{
+							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							bw = new BufferedWriter (fw);
+							bw.write("Ganador:" + p);
+							bw.newLine();
+
+							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						try{
+							if (bw != null)
+								bw.close();
+						}catch(Exception e){
+							e.printStackTrace();
+						
+						}
+						
+					}
 					}
 				}while(difi==true);
 
 
 			}
+			
+
+			
+			
 		}while(respuesta==true);
+		
+		
+		
+		
 		
 		do{
 			do{
 				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
-				System.out.println("DESEA JUGAR DE NUEVO? (seleccione numero 1 o 2)");
+				System.out.println("DESEA JUGAR DE NUEVO O VER EL HISTORIAL DE LAS PARTIDAS? (seleccione numero 1 o 2 o 3)");
 				System.out.println("1. Si");
 				System.out.println("2. No");
+				System.out.println("3. Historial");
 				opcion_eleguida=escaner.nextLine();
 				if(opcion_eleguida.length()<=1){
 					try{
@@ -660,9 +1260,32 @@ public class ProcesadorDeJuego {
 
 			} while(opcion_eleguida.length()>=2);
 
-			if (opcion<1 || opcion>2){
+			if (opcion<1 || opcion>3){
 				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
 				System.out.println("LA OPCION INGRESADA NO CORRESPONDER. ELEGUIR 1 o 2. \n");
+				opcion=0;
+			}
+			else if (opcion==3){
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+				BufferedReader br = null;
+				FileReader fr = null;
+				String linea = null;
+				try{
+					fr = new FileReader("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt");
+					br = new BufferedReader (fr);
+					while((linea = br.readLine() ) != null){
+						System.out.println(linea);
+					}
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+				try{
+					if (br != null)
+						br.close();
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+			
 				opcion=0;
 			}
 			else if (opcion==1){
@@ -674,9 +1297,9 @@ public class ProcesadorDeJuego {
 				opcion=2;
 			}
 
-		}while (opcion!=1 && opcion!=2);
+		}while (opcion!=1 && opcion!=2 && opcion != 3);
 
-
+		
 
 	}while (opcion==1);
 	System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
@@ -684,5 +1307,6 @@ public class ProcesadorDeJuego {
 	System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
 	escaner.close();
 	}
+
 }
 
