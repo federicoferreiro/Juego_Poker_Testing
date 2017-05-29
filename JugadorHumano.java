@@ -17,6 +17,8 @@ public class JugadorHumano {
     private RankingDeCombinaciones rankingDeComboMaximo = null;
     private long plata;
     protected long aumento;
+	public Object call;
+	public Object ciega;
 
     public enum Decision {
         CALL, RAISE, CHECK, FOLD
@@ -102,9 +104,7 @@ public class JugadorHumano {
        
 
         ArrayList<Decision> decisiones = new ArrayList<>(Arrays.asList(Decision.values()));
-        if (juego.etapaActual.equals(Juego.EtapasDeJuego.Preflop)) {
-            decisiones.remove(Decision.CHECK);
-        }
+
         if (plata == 0)
             decisiones.remove(Decision.CALL);
         if (plata <= juego.call) {
@@ -122,7 +122,7 @@ public class JugadorHumano {
             d = decisiones.get(Integer.parseInt(sc.nextLine()) - 1);
             break;
         }catch (Exception e){
-        	System.out.println();
+        	System.out.println("POR FAVOR INGRESAR NUMERO DE LA OPCION DESEADA");
             continue;
         }
         if (Decision.RAISE.equals(d)) {

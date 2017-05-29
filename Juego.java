@@ -13,7 +13,7 @@ public class Juego {
     public Iterator<JugadorHumano> iteradorDeJugadoresComunes;
     public ArrayList<Carta> cartasDeMesa;
     int buttonId;
-    int call;
+    long call;
     int fondo;
     ArrayList<JugadorHumano> ultimosGanadores;
     EtapasDeJuego etapaActual;
@@ -205,7 +205,7 @@ public class Juego {
             case FOLD:
                
                 System.out.println(jugador + " ABANDONA LA MANO");
-              
+                
 
                 iteradorDeJugadoresComunes.remove();
                 if (jugadoresComunes.size() < 2) {
@@ -215,9 +215,53 @@ public class Juego {
                 break;
             case CALL:
             	
+            	if (etapaActual == EtapasDeJuego.Preflop){
+            		
+            		if (jugadores.size()==2){
+            			if (jugador.equals(jugadoresComunes.get(0))){
+            				if (jugador.call == jugador.ciega){
+            					fondo += jugador.sacarPlata(ciega/2);
+            			
+            		
+            					System.out.println("puto");}
+            			}
+            		
+            			else if (jugador.equals(jugadoresComunes.get(1))){
+            	
+            				if (jugador.call == jugador.ciega){
+            					fondo += jugador.sacarPlata(call);
+            					System.out.println("zaaaa");
+            				}
+            		}
+            		
+            		
+            	}else {
+            		
+            			if (jugador.equals(jugadoresComunes.get(1))){
+            				if (jugador.call == jugador.ciega){
+            					fondo += jugador.sacarPlata(ciega/2);
+            			
+            		
+            					System.out.println("puto");}
+            			}
+            		
+            			else if (jugador.equals(jugadoresComunes.get(0))){
+            	
+            				if (jugador.call == jugador.ciega){
+            					fondo += jugador.sacarPlata(call);
+            					System.out.println("zaaaa");
+            				}
+            		}
+            	}
+            		
+            	
+            	}else{	
                 fondo += jugador.sacarPlata(call);
+                System.out.println("gato");
+            	}
+            	
 
-                
+            	
                 System.out.println(jugador + " EMPATA LA APUESTA " + call);
                 System.out.println("El pozo total es de $" + fondo);
                
@@ -237,7 +281,7 @@ public class Juego {
             case CHECK:
              
                 System.out.println(jugador + " PASA");
-              
+              etapaActual=EtapasDeJuego.Turn;
 
                 break;
             default:

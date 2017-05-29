@@ -18,7 +18,7 @@ public class InteligenciaDecisionMaquina
 
         public JugadorHumano.Decision getDecision()
         {
-            if(juego.etapaActual==Juego.EtapasDeJuego.Preflop)
+            if(juego.etapaActual==Juego.EtapasDeJuego.Preflop )
             {
                 return JugadorHumano.Decision.CALL;
             }
