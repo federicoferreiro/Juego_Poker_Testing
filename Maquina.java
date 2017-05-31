@@ -24,6 +24,8 @@ public class Maquina extends JugadorHumano {
 
     public Decision tomarDecision(Juego juego) {
         Decision decision;
+        long apuesta=0;
+        
         if (this.dificultad == 2) {
 
             decision = nivelMedio();
@@ -36,11 +38,36 @@ public class Maquina extends JugadorHumano {
         {
             decision = Decision.values()[new Random().nextInt(Decision.values().length)];
         }
+        
         if (Decision.RAISE.equals(decision)) {
-            if (getPlata() <= juego.call)
+        	
+			if (getPlata() < juego.apuestaMaximaRonda){
                 decision = Decision.CALL;
-            else
-                aumento = new Random().nextInt((int) (getPlata() - juego.call)) + juego.call + 1;
+				
+        	}
+            else{
+            	do{
+            	
+                apuesta = new Random().nextInt((int) (getPlata() - juego.call)) + juego.call + 1;
+       
+                
+                
+            	}while(apuesta==0 && apuesta< juego.apuestaMaximaRonda);
+            	
+            	
+            	}
+        	
+        
+        	
+        	
+        	aumento= apuesta-apuestaMaximaJugador;
+        
+        	apuestaMaximaJugador=apuesta;
+        
+        	juego.apuestaMaximaRonda=apuesta;
+			
+			
+			
         }
         return decision;
     }

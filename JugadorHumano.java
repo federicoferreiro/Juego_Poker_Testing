@@ -10,15 +10,17 @@ import java.util.Scanner;
 
 
 public class JugadorHumano {
-    private String nombre;
+    
+	private String nombre;
     private ArrayList<Carta> cartas = new ArrayList<Carta>(2);
     private Carta cartaMasAlta = null;
     private ArrayList<Carta> listaDeRankings = null;
     private RankingDeCombinaciones rankingDeComboMaximo = null;
-    private long plata;
+    long plata;
     protected long aumento;
-	public Object call;
-	public Object ciega;
+	public long call;
+	public long ciega;
+	public long apuestaMaximaJugador;
 
     public enum Decision {
         CALL, RAISE, CHECK, FOLD
@@ -104,11 +106,18 @@ public class JugadorHumano {
        
 
         ArrayList<Decision> decisiones = new ArrayList<>(Arrays.asList(Decision.values()));
-
+        if ( juego.apuestaMaximaRonda == apuestaMaximaJugador){
+        	decisiones.remove(Decision.CALL);
+        }
+        if (apuestaMaximaJugador < juego.apuestaMaximaRonda){
+        	decisiones.remove(Decision.CHECK);
+        }
+        
         if (plata == 0)
-            decisiones.remove(Decision.CALL);
-        if (plata <= juego.call) {
             decisiones.remove(Decision.RAISE);
+        	
+        if (plata < juego.call) {
+            decisiones.remove(Decision.CALL);
         }
 
        
@@ -127,7 +136,7 @@ public class JugadorHumano {
         }
         if (Decision.RAISE.equals(d)) {
         	String cantidad_aumento;
-        	Integer apuesta = 0;
+        	long apuesta = 0;
         	boolean buena_eleccion=false;
         	do{
         	do{
@@ -151,7 +160,7 @@ public class JugadorHumano {
 			} while(cantidad_aumento.length()>=6);
         	
 
-            if (apuesta > 0 && apuesta <= juego.call){
+            if (apuesta > 0 && apuesta <= juego.apuestaMaximaRonda && apuesta!=plata){
                 System.out.println("DEBE INGRESAR UN MONTO MAYOR A LO QUE SE APOSTO PREVIAMENTE");
             	buena_eleccion=false;
             	}
@@ -165,10 +174,24 @@ public class JugadorHumano {
             	System.out.println("NO PUEDE APOSTAR 0.... NI MONTOS NEGATIVOS");
             	buena_eleccion=false;
             	}
+            if(apuesta==plata){
+            	buena_eleccion=true;
+            	
+            	aumento=sacarPlata(apuesta);
+            	juego.apuestaMaximaRonda=apuesta;
+            
+            }
             
             if (apuesta>juego.call && apuesta>0 && apuesta<=plata){
             	buena_eleccion=true;
-            	aumento= 0 + apuesta;
+            	
+            	
+            	aumento= apuesta-apuestaMaximaJugador;
+            	juego.apuestaMaximaRonda=apuesta;
+       
+            
+            	
+            	
             	
             }
         
@@ -186,4 +209,16 @@ public class JugadorHumano {
     public String toString() {
         return nombre;
     }
+
+
+
+	public long getApuestaMaximaJugador() {
+		return apuestaMaximaJugador;
+	}
+
+
+
+	public void setApuestaMaximaJugador(long apuestaMaximaJugador) {
+		this.apuestaMaximaJugador = apuestaMaximaJugador;
+	}
 }

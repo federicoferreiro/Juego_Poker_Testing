@@ -201,7 +201,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -244,7 +244,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -285,7 +285,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -355,7 +355,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -396,7 +396,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -437,7 +437,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -508,7 +508,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -549,7 +549,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -590,7 +590,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -661,7 +661,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -702,7 +702,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -743,7 +743,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -814,7 +814,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -855,7 +855,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -896,7 +896,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -967,7 +967,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -1008,7 +1008,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -1049,7 +1049,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -1120,7 +1120,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -1161,7 +1161,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							
@@ -1202,7 +1202,7 @@ public class ProcesadorDeJuego {
 						try{
 							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
-							bw.write("Ganador:" + p);
+							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
 
 							

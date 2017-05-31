@@ -1,3 +1,9 @@
-El programa de Poker se inicio en la siguiete fecha:   Mon May 29 11:23:46 ART 2017
+El programa de Poker se inicio en la siguiete fecha:   Tue May 30 18:48:40 ART 2017
 Y los ganadores de los distintos torneos hasta que se cerro la aplicacion han sido....
 
+Ganador:John, Torneo de:2 jugadores, y con dificultad nivel: 1
+El programa de Poker se inicio en la siguiete fecha:   Wed May 31 13:17:18 ART 2017
+Y los ganadores de los distintos torneos hasta que se cerro la aplicacion han sido....
+
+Ganador:User, Torneo de:2 jugadores, y con dificultad nivel: 1
+Ganador:John, Torneo de:4 jugadores, y con dificultad nivel: 3
