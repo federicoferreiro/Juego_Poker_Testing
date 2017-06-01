@@ -233,7 +233,7 @@ public class Juego {
 	}
 
 	public void decisionesDeJuego(JugadorHumano jugador) {
-		if (iteradorDeJugadoresComunes == null)
+	if (iteradorDeJugadoresComunes == null)
 			throw new NullPointerException();
 		switch (jugador.tomarDecision(this)) {
 		case FOLD:
