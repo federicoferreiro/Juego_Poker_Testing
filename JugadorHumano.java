@@ -109,12 +109,14 @@ public class JugadorHumano {
         if ( juego.apuestaMaximaRonda == apuestaMaximaJugador){
         	decisiones.remove(Decision.CALL);
         }
-        if (apuestaMaximaJugador < juego.apuestaMaximaRonda){
+        if (apuestaMaximaJugador < juego.apuestaMaximaRonda && plata !=0){
         	decisiones.remove(Decision.CHECK);
         }
         
         if (plata == 0)
             decisiones.remove(Decision.RAISE);
+        	decisiones.remove(Decision.FOLD);
+        	decisiones.remove(Decision.CALL);
         	
         if (plata < juego.call) {
             decisiones.remove(Decision.CALL);
@@ -178,7 +180,7 @@ public class JugadorHumano {
             	buena_eleccion=true;
             	
             	aumento=sacarPlata(apuesta);
-            	juego.apuestaMaximaRonda=apuesta;
+            	juego.apuestaMaximaRonda=juego.apuestaMaximaRonda + aumento;
             
             }
             
