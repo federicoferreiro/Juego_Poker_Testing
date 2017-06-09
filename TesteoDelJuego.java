@@ -8,6 +8,19 @@ import org.junit.Test;
 
 public class TesteoDelJuego {
 
+	
+    @Test
+    public void testInicilizacionNoJugadoresMinimos()
+    {
+        Juego juego = new Juego(50000, new Maquina("Tamara"));
+        juego.iniciarJuego();
+
+        
+        
+        Assert.assertNotEquals(juego.getJugadores(), null);
+     
+
+    }
 
     @Test
     public void testInicilizacion()
@@ -19,5 +32,20 @@ public class TesteoDelJuego {
         Assert.assertNotEquals(juego.getJugadorComun(), null);
 
     }
+    
+    @Test
+    public void testInicilizacionNoJugadoresMaximosPermitidos()
+    {
+        Juego juego = new Juego(50000, new Maquina("Tamara"),new Maquina("Tamara"),new Maquina("Tamara"),new Maquina("Tamara"),new Maquina("Tamara"),new Maquina("Tamara"),new Maquina("Tamara"),new Maquina("Tamara"),new Maquina("Tamara"));
+        juego.iniciarJuego();
+
+        
+        
+        Assert.assertNotEquals(juego.getJugadores(), null);
+     
+
+    }
+    
+
 
 }
