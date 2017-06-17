@@ -1,4 +1,4 @@
-package Testing;
+package poker;
 
 import java.util.Random;
 
@@ -9,11 +9,11 @@ public class Maquina extends JugadorHumano {
     
     
     public Maquina(String nombreMaquina) {
-        super(nombreMaquina, 1500);
+        super(nombreMaquina, 1000);
     }
 
     public Maquina(String nombreMaquina, int dificultad) {
-        super(nombreMaquina, 1500);
+        super(nombreMaquina, 1000);
         this.dificultad = dificultad;
     }
     

@@ -1,4 +1,4 @@
-package Testing;
+package poker;
 
 import java.util.*;
 

@@ -1,8 +1,9 @@
-package Testing;
+package poker;
 
 import java.util.*;
 
-import Testing.RankingDeCombinaciones.Combinaciones;
+
+import poker.RankingDeCombinaciones.Combinaciones;
 
 
 public class Juego {

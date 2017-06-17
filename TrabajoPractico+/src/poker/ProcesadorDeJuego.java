@@ -1,4 +1,4 @@
-package Testing;
+package poker;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -29,7 +29,7 @@ public class ProcesadorDeJuego {
 		FileWriter fwritter = null;
 
 		try{
-			fwritter = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+			fwritter = new FileWriter("Ganadores.txt",true);
 			bwritter = new BufferedWriter (fwritter);
 			bwritter.write("El programa de Poker se inicio en la siguiete fecha:   " + Ahora);
 			bwritter.newLine();
@@ -90,7 +90,7 @@ public class ProcesadorDeJuego {
 				FileReader fr = null;
 				String linea = null;
 				try{
-					fr = new FileReader("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt");
+					fr = new FileReader("Ganadores.txt");
 					br = new BufferedReader (fr);
 					while((linea = br.readLine() ) != null){
 						System.out.println(linea);
@@ -180,7 +180,7 @@ public class ProcesadorDeJuego {
 
 					if(dificultad==3){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 3), new Maquina("Zion", 3), new Maquina("Carbon", 3),new Maquina("Elena", 3),new Maquina("Matt", 3),new Maquina("Peter", 3),new Maquina("Brad", 3));
+						Juego juego = new Juego(10, new JugadorHumano("User", 250), new Maquina("John", 3), new Maquina("Zion", 3), new Maquina("Carbon", 3),new Maquina("Elena", 3),new Maquina("Matt", 3),new Maquina("Peter", 3),new Maquina("Brad", 3));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -199,7 +199,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -223,7 +223,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==2){
 						difi=false;				
-						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 2), new Maquina("Zion", 2), new Maquina("Carbon", 2),new Maquina("Elena", 2),new Maquina("Matt", 2),new Maquina("Peter", 2),new Maquina("Brad", 2));
+						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 2), new Maquina("Zion", 2), new Maquina("Carbon", 2),new Maquina("Elena", 2),new Maquina("Matt", 2),new Maquina("Peter", 2),new Maquina("Brad", 2));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -242,7 +242,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -264,7 +264,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==1){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1500), new Maquina("John", 1), new Maquina("Zion", 1), new Maquina("Carbon", 1),new Maquina("Elena", 1),new Maquina("Matt", 1),new Maquina("Peter", 1),new Maquina("Brad", 1));
+						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 1), new Maquina("Zion", 1), new Maquina("Carbon", 1),new Maquina("Elena", 1),new Maquina("Matt", 1),new Maquina("Peter", 1),new Maquina("Brad", 1));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -283,7 +283,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -335,7 +335,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==3){
 						difi=false;					
-						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 3), new Maquina("Zion", 3), new Maquina("Carbon", 3),new Maquina("Elena", 3),new Maquina("Matt", 3),new Maquina("Peter", 3));
+						Juego juego = new Juego(10, new JugadorHumano("User", 250), new Maquina("John", 3), new Maquina("Zion", 3), new Maquina("Carbon", 3),new Maquina("Elena", 3),new Maquina("Matt", 3),new Maquina("Peter", 3));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 						while(true) {
 							if(juego.incioSiguienteEtapa() == Juego.EtapasDeJuego.FIN)
@@ -353,7 +353,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -375,7 +375,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==2){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 2), new Maquina("Zion", 2), new Maquina("Carbon", 2),new Maquina("Elena", 2),new Maquina("Matt", 2),new Maquina("Peter", 2));
+						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 2), new Maquina("Zion", 2), new Maquina("Carbon", 2),new Maquina("Elena", 2),new Maquina("Matt", 2),new Maquina("Peter", 2));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -394,7 +394,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -416,7 +416,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==1){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1500), new Maquina("John", 1), new Maquina("Zion", 1), new Maquina("Carbon", 1),new Maquina("Elena", 1),new Maquina("Matt", 1),new Maquina("Peter", 1));
+						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 1), new Maquina("Zion", 1), new Maquina("Carbon", 1),new Maquina("Elena", 1),new Maquina("Matt", 1),new Maquina("Peter", 1));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -435,7 +435,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -487,7 +487,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==3){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 3), new Maquina("Zion", 3), new Maquina("Carbon", 3),new Maquina("Elena", 3),new Maquina("Matt", 3));
+						Juego juego = new Juego(10, new JugadorHumano("User", 250), new Maquina("John", 3), new Maquina("Zion", 3), new Maquina("Carbon", 3),new Maquina("Elena", 3),new Maquina("Matt", 3));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -506,7 +506,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -528,7 +528,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==2){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 2), new Maquina("Zion", 2), new Maquina("Carbon", 2),new Maquina("Elena", 2),new Maquina("Matt", 2));
+						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 2), new Maquina("Zion", 2), new Maquina("Carbon", 2),new Maquina("Elena", 2),new Maquina("Matt", 2));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -547,7 +547,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -569,7 +569,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==1){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1500), new Maquina("John", 1), new Maquina("Zion", 1), new Maquina("Carbon", 1),new Maquina("Elena", 1),new Maquina("Matt", 1));
+						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 1), new Maquina("Zion", 1), new Maquina("Carbon", 1),new Maquina("Elena", 1),new Maquina("Matt", 1));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -588,7 +588,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -640,7 +640,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==3){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 3), new Maquina("Zion", 3), new Maquina("Carbon", 3),new Maquina("Elena", 3));
+						Juego juego = new Juego(10, new JugadorHumano("User", 250), new Maquina("John", 3), new Maquina("Zion", 3), new Maquina("Carbon", 3),new Maquina("Elena", 3));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -659,7 +659,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -681,7 +681,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==2){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 2), new Maquina("Zion", 2), new Maquina("Carbon", 2),new Maquina("Elena", 2));
+						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 2), new Maquina("Zion", 2), new Maquina("Carbon", 2),new Maquina("Elena", 2));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -700,7 +700,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -722,7 +722,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==1){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1500), new Maquina("John", 1), new Maquina("Zion", 1), new Maquina("Carbon", 11),new Maquina("Elena", 1));
+						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 1), new Maquina("Zion", 1), new Maquina("Carbon", 11),new Maquina("Elena", 1));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -741,7 +741,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -793,7 +793,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==3){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 3), new Maquina("Zion", 3), new Maquina("Carbon", 3));
+						Juego juego = new Juego(10, new JugadorHumano("User", 250), new Maquina("John", 3), new Maquina("Zion", 3), new Maquina("Carbon", 3));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -812,7 +812,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -834,7 +834,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==2){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 2), new Maquina("Zion", 2), new Maquina("Carbon", 2));
+						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 2), new Maquina("Zion", 2), new Maquina("Carbon", 2));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -853,7 +853,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -875,7 +875,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==1){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1500), new Maquina("John", 1), new Maquina("Zion", 1), new Maquina("Carbon", 1));
+						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 1), new Maquina("Zion", 1), new Maquina("Carbon", 1));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -894,7 +894,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -946,7 +946,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==3){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 3), new Maquina("Zion", 3));
+						Juego juego = new Juego(10, new JugadorHumano("User", 250), new Maquina("John", 3), new Maquina("Zion", 3));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -965,7 +965,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -987,7 +987,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==2){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 2), new Maquina("Zion", 2));
+						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 2), new Maquina("Zion", 2));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -1006,7 +1006,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -1028,7 +1028,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==1){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1500), new Maquina("John", 1), new Maquina("Zion", 1));
+						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 1), new Maquina("Zion", 1));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -1047,7 +1047,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -1099,7 +1099,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==3){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 3));
+						Juego juego = new Juego(10, new JugadorHumano("User", 250), new Maquina("John", 3));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -1118,7 +1118,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -1140,7 +1140,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==2){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 2));
+						Juego juego = new Juego(10, new JugadorHumano("User", 500), new Maquina("John", 2));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -1159,7 +1159,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -1181,7 +1181,7 @@ public class ProcesadorDeJuego {
 					}
 					if(dificultad==1){
 						difi=false;
-						Juego juego = new Juego(10, new JugadorHumano("User", 1500), new Maquina("John", 1));
+						Juego juego = new Juego(10, new JugadorHumano("User", 1000), new Maquina("John", 1));
 						juego.etapaActual = Juego.EtapasDeJuego.INICIO;
 
 						while(true) {
@@ -1200,7 +1200,7 @@ public class ProcesadorDeJuego {
 						
 				
 						try{
-							fw = new FileWriter("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt",true);
+							fw = new FileWriter("Ganadores.txt",true);
 							bw = new BufferedWriter (fw);
 							bw.write("Ganador:" + p + ", Torneo de:" + jugadores_cantidad + " jugadores, y con dificultad nivel: "+ nivel_dificultad);
 							bw.newLine();
@@ -1271,7 +1271,7 @@ public class ProcesadorDeJuego {
 				FileReader fr = null;
 				String linea = null;
 				try{
-					fr = new FileReader("C:\\Users\\feche\\Desktop\\JAVA\\Tp.Testing\\Poker\\Testing\\Ganadores.txt");
+					fr = new FileReader("Ganadores.txt");
 					br = new BufferedReader (fr);
 					while((linea = br.readLine() ) != null){
 						System.out.println(linea);
