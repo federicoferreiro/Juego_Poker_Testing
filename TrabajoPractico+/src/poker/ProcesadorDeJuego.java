@@ -20,7 +20,7 @@ public class ProcesadorDeJuego {
 
 		Scanner escaner = new Scanner(System.in);
 		
-; 
+
 		Date Ahora = new Date(); 
 		
 

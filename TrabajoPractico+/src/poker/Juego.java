@@ -16,7 +16,7 @@ public class Juego {
 	int buttonId;
 	long call;
 	int fondo;
-	public long apuestaMaximaRonda=0;
+	public long apuestaMaximaRonda;
 
 	ArrayList<JugadorHumano> ultimosGanadores;
 	EtapasDeJuego etapaActual;
@@ -27,7 +27,6 @@ public class Juego {
 
 	public Juego(int ciega, JugadorHumano... jugadores) {
 		this.ciega = ciega;
-
 		this.jugadores = new LinkedList<>();
 		for (JugadorHumano p : jugadores)
 			this.jugadores.add(p);
@@ -45,6 +44,7 @@ public class Juego {
 		mazo.mezclarMazo();
 		call = this.ciega;
 		fondo = 0;
+		apuestaMaximaRonda=0;
 		jugadores.removeIf(jugador -> {
 			int index = jugadores.indexOf(jugador);
 			if (jugador.getPlata() == 0) {
@@ -76,10 +76,11 @@ public class Juego {
 		}
 
 
-		for (JugadorHumano p : jugadores)
+		for (JugadorHumano p : jugadores){
+			p.setApuestaMaximaJugador(0);
 			System.out.println(p + " [FONDO: " + p.getPlata() + "]");
 		System.out.println();
-
+		}
 
 		cartasDeMesa = new ArrayList<>();
 		etapaActual = EtapasDeJuego.Preflop;
@@ -119,7 +120,7 @@ public class Juego {
 		
 		
 		apuestaMaximaRonda=10;
-			
+
 
 		
 		
@@ -149,7 +150,7 @@ public class Juego {
 
 		for (JugadorHumano jugador : jugadoresComunes) {
 		
-					
+				
 			jugador.aumento=0;
 			jugador.setCartas(mazo.tirarCarta(), mazo.tirarCarta());
 		}
@@ -250,35 +251,38 @@ public class Juego {
 			break;
 		case CALL:
 
-			if(jugador.plata == apuestaMaximaRonda || jugador.plata<= apuestaMaximaRonda){
+			if(jugador.plata<= (apuestaMaximaRonda - jugador.apuestaMaximaJugador)){
 				call= jugador.plata;
 				fondo+=jugador.sacarPlata(call);
 				
 				
-				System.out.println(jugador + " HACE ALL-IN COLOCANDO"+" " + call + " " + "PONIENDO EL TOTAL A" + " " + apuestaMaximaRonda );
+				System.out.println(jugador + " HACE ALL-IN COLOCANDO"+" " + call);
+				System.out.println("La apuesta Maxima es de"+" "+apuestaMaximaRonda);
 				System.out.println("El pozo total es de $" + fondo);
 				
 				
 				jugador.apuestaMaximaJugador=apuestaMaximaRonda;
 			
 			}
+		
+			else{
 			
 			call=apuestaMaximaRonda-jugador.apuestaMaximaJugador;
 			fondo+=jugador.sacarPlata(call);
 			
 			
-			
+	
 			System.out.println(jugador + " EMPATA LA APUESTA DE "+" "+ apuestaMaximaRonda+" " + "COLOCANDO"+" " + call);
 			System.out.println("El pozo total es de $" + fondo);
 
 		
 			jugador.apuestaMaximaJugador=apuestaMaximaRonda;
 			   
-		
+			}
 			break;
 		case RAISE:
 			
-					if(jugador.plata == jugador.aumento || jugador.plata<=jugador.aumento){
+					if(jugador.plata<=jugador.aumento){
 						call=jugador.aumento;
 						fondo+=jugador.aumento;
 						
@@ -363,8 +367,8 @@ public class Juego {
 		}
 
 		System.out.println("El monto total que se lleva el ganador es $" + fondo );
-
 		return true;
+	
 	}
 
 	public LinkedList<JugadorHumano> getJugadoresComunes() {
