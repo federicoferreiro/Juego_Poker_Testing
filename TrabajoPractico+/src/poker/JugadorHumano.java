@@ -23,6 +23,7 @@ public class JugadorHumano {
 	public long call;
 	public long ciega;
 	public long apuestaMaximaJugador;
+	
 
     public enum Decision {
         CALL, RAISE, CHECK, FOLD

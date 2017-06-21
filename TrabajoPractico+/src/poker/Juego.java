@@ -287,6 +287,7 @@ public class Juego {
 						fondo+=jugador.aumento;
 						
 						
+						
 						System.out.println(jugador + " HACE ALL-IN COLOCANDO"+" " + call + " " + "PONIENDO EL TOTAL A" + " " + apuestaMaximaRonda );
 						System.out.println("El pozo total es de $" + fondo);
 						
