@@ -20,7 +20,7 @@ public class ProcesadorDeJuego {
 
 		Scanner escaner = new Scanner(System.in);
 		
-; 
+
 		Date Ahora = new Date(); 
 		
 
@@ -36,7 +36,7 @@ public class ProcesadorDeJuego {
 			bwritter.write("Y los ganadores de los distintos torneos hasta que se cerro la aplicacion han sido....\n");
 			bwritter.newLine();
 
-			
+		
 		}catch(Exception e){
 			e.printStackTrace();
 		}

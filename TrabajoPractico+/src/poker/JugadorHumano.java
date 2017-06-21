@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import poker.JugadorHumano.Decision;
+
 
 
 public class JugadorHumano {
@@ -21,9 +23,12 @@ public class JugadorHumano {
 	public long call;
 	public long ciega;
 	public long apuestaMaximaJugador;
+	
 
     public enum Decision {
         CALL, RAISE, CHECK, FOLD
+        
+       
     }
 
     public JugadorHumano(String nombre, long plata) {
@@ -92,6 +97,7 @@ public class JugadorHumano {
         Decision d;
 
         
+        
         System.out.println();
         if(!cartas.isEmpty())
         	System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
@@ -106,19 +112,31 @@ public class JugadorHumano {
        
 
         ArrayList<Decision> decisiones = new ArrayList<>(Arrays.asList(Decision.values()));
-        if ( juego.apuestaMaximaRonda == apuestaMaximaJugador){
+       
+        
+        if(apuestaMaximaJugador==0){
+          	decisiones.remove(Decision.CHECK);
+    		  
+          }
+        if ( apuestaMaximaJugador == juego.apuestaMaximaRonda){
         	decisiones.remove(Decision.CALL);
         }
+
         if (apuestaMaximaJugador < juego.apuestaMaximaRonda && plata !=0){
         	decisiones.remove(Decision.CHECK);
+        }     
+        if(juego.apuestaMaximaRonda==0){
+        	decisiones.remove(Decision.CALL);
         }
         
-        if (plata == 0)
+            
+        if (plata == 0){
             decisiones.remove(Decision.RAISE);
         	decisiones.remove(Decision.FOLD);
         	decisiones.remove(Decision.CALL);
+        }
         	
-        if (plata < juego.call) {
+        if (plata < (juego.apuestaMaximaRonda-apuestaMaximaJugador)) {
             decisiones.remove(Decision.CALL);
         }
 
@@ -180,7 +198,7 @@ public class JugadorHumano {
             	buena_eleccion=true;
             	
             	aumento=sacarPlata(apuesta);
-            	juego.apuestaMaximaRonda=juego.apuestaMaximaRonda + aumento;
+            	juego.apuestaMaximaRonda=apuesta + apuestaMaximaJugador;
             
             }
             
@@ -189,7 +207,7 @@ public class JugadorHumano {
             	
             	
             	aumento= apuesta-apuestaMaximaJugador;
-            	juego.apuestaMaximaRonda=apuesta;
+            	juego.apuestaMaximaRonda=aumento + apuestaMaximaJugador;
        
             
             	
@@ -221,6 +239,6 @@ public class JugadorHumano {
 
 
 	public void setApuestaMaximaJugador(long apuestaMaximaJugador) {
-		this.apuestaMaximaJugador = apuestaMaximaJugador;
+		this.apuestaMaximaJugador = 0;
 	}
 }
